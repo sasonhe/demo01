@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DataExpo-项目管理</title>
+    <link rel="shortcut icon" href="favicon.ico">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/font-awesome.css" rel="stylesheet">
+    <link href="css/animate.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/sweetalert.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+
+<body class="gray-bg top-navigation" onload="setup1();preselect1('');setup2();preselect2('')">
+    <div id="wrapper">
+        <div id="page-wrapper" class="gray-bg">
+            <div class="row border-bottom white-bg">
+                <!-- 导航 -->
+                <nav class="navbar navbar-static-top" role="navigation">
+                    <div class="navbar-header">
+                        <button aria-controls="navbar" aria-expanded="false" data-target="#navbar" data-toggle="collapse" class="navbar-toggle collapsed btn-primary" type="button">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <a href="#" class=""><img src="1.png" alt="" style="width:158px;height:50px;"></a>
+                    </div>
+                    <div class="navbar-collapse collapse" id="navbar">
+                        <ul class="nav navbar-nav">
+                            <li class="active">
+                                <a aria-expanded="false" role="button" href="javascript:;">项目管理</a>
+                            </li>
+                            <li>
+                                <a aria-expanded="false" role="button" href="javascript:;">联系人管理</a>
+                            </li>
+                            <li>
+                                <a aria-expanded="false" role="button" href="javascript:;">账号管理</a>
+                            </li>
+                            <li>
+                                <a aria-expanded="false" role="button" href="javascript:;">财务管理</a>
+                            </li>
+                        </ul>
+                        <ul class="nav navbar-top-links navbar-right">
+                            <li><i class="glyphicon glyphicon-user"></i> 用户123</li>
+                            <li>
+                                <a href="login.html">
+                                    <i class="fa fa-sign-out"></i> 退出
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+            <div class="wrapper wrapper-content">
+                <div class="container">
+                    <!-- 4块显示数量 -->
+                    <div class="row animated fadeInRightBig">
+                        <div class="col-md-3">
+                            <div class="ibox float-e-margins">
+                                <div class="ibox-title">
+                                    <!-- <span class="label label-success pull-right">月</span> -->
+                                    <h5>项目数</h5>
+                                </div>
+                                <div class="ibox-content">
+                                    <h1 class="no-margins">386,200</h1>
+                                    <!-- <div class="stat-percent font-bold text-success">98% <i class="fa fa-bolt"></i>
+                                    </div> -->
+                                    <!-- <small>总计浏览量</small> -->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="ibox float-e-margins">
+                                <div class="ibox-title">
+                                    <!-- <span class="label label-info pull-right">年</span> -->
+                                    <h5>注册人数</h5>
+                                </div>
+                                <div class="ibox-content">
+                                    <h1 class="no-margins">80,800</h1>
+                                    <!-- <div class="stat-percent font-bold text-info">20% <i class="fa fa-level-up"></i>
+                                    </div>
+                                    <small>新订单</small> -->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="ibox float-e-margins">
+                                <div class="ibox-title">
+                                    <!-- <span class="label label-info pull-right">年</span> -->
+                                    <h5>入场人数</h5>
+                                </div>
+                                <div class="ibox-content">
+                                    <h1 class="no-margins">80,800</h1>
+                                    <!-- <div class="stat-percent font-bold text-info">20% <i class="fa fa-level-up"></i>
+                                    </div>
+                                    <small>新订单</small> -->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="ibox float-e-margins">
+                                <div class="ibox-title">
+                                    <!-- <span class="label label-info pull-right">年</span> -->
+                                    <h5>XXXX</h5>
+                                </div>
+                                <div class="ibox-content">
+                                    <h1 class="no-margins">80,800</h1>
+                                    <!-- <div class="stat-percent font-bold text-info">20% <i class="fa fa-level-up"></i>
+                                    </div>
+                                    <small>新订单</small> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 图表 -->
+                    <div class="row" style="display:none">
+                        <!-- 图表1 -->
+                        <div class="col-lg-8">
+                            <div class="ibox float-e-margins">
+                                <div class="ibox-content">
+                                    <div>
+                                        <span class="pull-right text-right">
+                                        <small>在过去的一个月销售的平均值：<strong>山东</strong></small>
+                                            <br/>
+                                            所有销售： 162,862
+                                        </span>
+                                        <h3 class="font-bold no-margins">
+                                            半年收入利润率
+                                        </h3>
+                                        <small>市场部</small>
+                                    </div>
+                                    <div class="m-t-sm">
+                                        <div class="row">
+                                            <div class="col-md-8">
+                                                <div>
+                                                    <canvas id="lineChart" height="114"></canvas>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <ul class="stat-list m-t-lg">
+                                                    <li>
+                                                        <h2 class="no-margins">2,346</h2>
+                                                        <small>总订单</small>
+                                                        <div class="progress progress-mini">
+                                                            <div class="progress-bar" style="width: 48%;"></div>
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <h2 class="no-margins ">4,422</h2>
+                                                        <small>最近一个月订单</small>
+                                                        <div class="progress progress-mini">
+                                                            <div class="progress-bar" style="width: 60%;"></div>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="m-t-md">
+                                        <small class="pull-right">
+                                        <i class="fa fa-clock-o"> </i>
+                                        2015.02.30更新
+                                    </small>
+                                        <small>
+                                        <strong>说明：</strong> 本期销售额比上期增长了23%。
+                                    </small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 图表2 -->
+                        <div class="col-lg-4">
+                            <div class="ibox float-e-margins">
+                                <div class="ibox-title">
+                                    <h5>用户行为统计</h5>
+                                </div>
+                                <div class="ibox-content">
+                                    <div class="row">
+                                        <div class="col-xs-4">
+                                            <small class="stats-label">访问页面 / 浏览</small>
+                                            <h4>236 321.80</h4>
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <small class="stats-label">% 新访客</small>
+                                            <h4>46.11%</h4>
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <small class="stats-label">最后一周</small>
+                                            <h4>432.021</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="ibox-content">
+                                    <div class="row">
+                                        <div class="col-xs-4">
+                                            <small class="stats-label">访问页面 / 浏览</small>
+                                            <h4>643 321.10</h4>
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <small class="stats-label">% 新访客</small>
+                                            <h4>92.43%</h4>
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <small class="stats-label">最后一周</small>
+                                            <h4>564.554</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="ibox-content">
+                                    <div class="row">
+                                        <div class="col-xs-4">
+                                            <small class="stats-label">访问页面 / 浏览</small>
+                                            <h4>436 547.20</h4>
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <small class="stats-label">% 新访客</small>
+                                            <h4>150.23%</h4>
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <small class="stats-label">最后一周</small>
+                                            <h4>124.990</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <!-- 增删改查开始 -->
+                            <div class="ibox float-e-margins animated fadeInUp">
+                                <div class="ibox-title">
+                                    <h5>项目列表</h5>
+                                </div>
+                                <div class="ibox-content">
+                                    <div class="row">
+                                        <div class="col-sm-9 m-b-xs">
+                                            <div class="">
+                                                <button type="button" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#myModal">创建项目</button>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <div class="input-group">
+                                                <input type="text" placeholder="请输入项目名称" class="input-sm form-control"> <span class="input-group-btn">
+                                        <button type="button" class="btn btn-sm btn-primary">搜索</button> </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="table-responsive">
+                                        <table class="table table-hover">
+                                            <thead>
+                                                <tr>
+                                                    <th>项目名称</th>
+                                                    <th>举办日期</th>
+                                                    <th>数据概括</th>
+                                                    <th>操作</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td class="project-status">
+                                                        <small>会展中心二号馆</small>
+                                                    </td>
+                                                    <td class="project-title">
+                                                        <div>2017年深圳生物展</div>
+                                                        <div>2017.9.12~2017.9.15</div>
+                                                    </td>
+                                                    <td class="project-completion">
+                                                        <div>
+                                                            <small>本月注册：1人&nbsp;&nbsp;</small>
+                                                            <small>注册总人数：200人&nbsp;&nbsp;</small>
+                                                            <small>入场人数：1000人</small>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <a href="javascript:;" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#myModal2"><i class="fa fa-pencil"></i> 编辑/修改 </a>
+                                                        <a href="javascript:;" class="btn btn-danger btn-sm " id="delete"><i class="glyphicon glyphicon-remove"></i> 删除 </a>
+                                                        <a href="javascript:;" class="btn btn-info btn-sm"><i class="fa fa-folder"></i> 进入项目 </a>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <!-- 增删改查结束 -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- footer -->
+            <div class="footer">
+                <div class="pull-right">
+                    By：<a href="http://www.zi-han.net" target="_blank">DataExpo</a>
+                </div>
+                <div class="pull-right">
+                    <strong>Copyright</strong> DataExpo © 2017 &nbsp;
+                </div>
+            </div>
+        </div>
+
+        <!-- 创建项目弹窗 -->
+        <div class="modal inmodal in" id="myModal" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content animated bounceInRight">
+
+                    <div class="pro-title">
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">关闭</span>
+                        </button>
+                        <h4 class="modal-title">新增项目</h4>
+                    </div>
+                    <div class="modal-header">
+
+                        <div class="modal-body">
+                            <form class="form-horizontal m-t" id="signupForm" novalidate="novalidate">
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label">项目名称：</label>
+                                    <div class="col-sm-8">
+                                        <input id="pro-title" name="pro-title" class="form-control input-sm" type="text">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label">开始日期：</label>
+                                    <div class="col-sm-8">
+                                        <div class="input-group date">
+                                            <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                                            <input type="text" class="form-control" value="2017-09-11" id="date1" name="date1">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label">结束日期：</label>
+                                    <div class="col-sm-8">
+                                        <div class="input-group date">
+                                            <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                                            <input type="text" class="form-control" value="2017-09-11" id="date2" name="date2">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label">举办省份：</label>
+                                    <div class="col-sm-8">
+                                        <select class="form-control" name="uiProvince" id="loc_province">
+                                            <option></option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label">举办城市：</label>
+                                    <div class="col-sm-8">
+                                        <select class="form-control" name="uiCity" id="loc_city">
+                                            <option></option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label">详细地址：</label>
+                                    <div class="col-sm-8">
+                                        <input id="sponsor" name="sponsor" class="form-control input-sm" type="text">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label">主办单位：</label>
+                                    <div class="col-sm-8">
+                                        <input id="sponsor" name="sponsor" class="form-control input-sm" type="text">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label">管理人：</label>
+                                    <div class="col-sm-8">
+                                        <input id="tell-name" name="tell-name" class="form-control input-sm" type="text">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label">联系方式：</label>
+                                    <div class="col-sm-8">
+                                        <input id="tell-phone" name="tell-phone" class="form-control input-sm" type="text">
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer pro-footer">
+                            <button type="button" class="btn btn-white" data-dismiss="modal">关闭</button>
+                            <button type="submit" class="btn btn-primary">提交</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 修改弹出窗 -->
+        <div class="modal inmodal in" id="myModal2" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content animated bounceInRight">
+
+                    <div class="pro-title">
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">关闭</span>
+                        </button>
+                        <h4 class="modal-title">修改项目信息</h4>
+                    </div>
+                    <div class="modal-header">
+
+                        <div class="modal-body">
+                            <form class="form-horizontal m-t" id="signupForm" novalidate="novalidate">
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label">项目名称：</label>
+                                    <div class="col-sm-8">
+                                        <input id="pro-title" name="pro-title" class="form-control input-sm" type="text">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label">开始日期：</label>
+                                    <div class="col-sm-8">
+                                        <div class="input-group date">
+                                            <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                                            <input type="text" class="form-control" value="2017-09-11" id="date3" name="date3">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label">结束日期：</label>
+                                    <div class="col-sm-8">
+                                        <div class="input-group date">
+                                            <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                                            <input type="text" class="form-control" value="2017-09-11" id="date4" name="date4">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label">举办省份：</label>
+                                    <div class="col-sm-8">
+                                        <select class="form-control" name="uiProvince2" id="loc_province2">
+                                            <option></option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label">举办城市：</label>
+                                    <div class="col-sm-8">
+                                        <select class="form-control" name="uiCity2" id="loc_city2">
+                                            <option></option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label">详细地址：</label>
+                                    <div class="col-sm-8">
+                                        <input id="sponsor" name="sponsor" class="form-control input-sm" type="text">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label">主办单位：</label>
+                                    <div class="col-sm-8">
+                                        <input id="sponsor" name="sponsor" class="form-control input-sm" type="text">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label">管理人：</label>
+                                    <div class="col-sm-8">
+                                        <input id="tell-name" name="tell-name" class="form-control input-sm" type="text">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label">联系方式：</label>
+                                    <div class="col-sm-8">
+                                        <input id="tell-phone" name="tell-phone" class="form-control input-sm" type="text">
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer pro-footer">
+                            <button type="button" class="btn btn-white" data-dismiss="modal">关闭</button>
+                            <button type="submit" class="btn btn-primary">修改</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 全局js -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <!-- 自定义js -->
+    <script src="js/content.js"></script>
+    <!-- Flot -->
+    <script src="js/jquery.flot.js"></script>
+    <script src="js/jquery.flot.tooltip.min.js"></script>
+    <script src="js/jquery.flot.resize.js"></script>
+    <!-- ChartJS-->
+    <script src="js/Chart.min.js"></script>
+    <!-- Peity -->
+    <script src="js/jquery.peity.min.js"></script>
+    <!-- Peity demo -->
+    <script src="js/peity-demo.js"></script>
+    <!-- layDate -->
+    <script src="laydate/laydate.js"></script>
+    <!-- allCity -->
+    <script src="js/geo1.js"></script>
+    <script src="js/geo10.js"></script>
+    <!-- 弹窗 -->
+    <script src="js/sweetalert.min.js"></script>
+    <script>
+        $(document).ready(function() {
+
+
+            // 执行一个laydate实例(日期选择器)
+            laydate.render({
+                elem: '#date1' //指定元素
+            });
+            laydate.render({
+                elem: '#date2' //指定元素
+            });
+            laydate.render({
+                elem: '#date3' //指定元素
+            });
+            laydate.render({
+                elem: '#date4' //指定元素
+            });
+            // 执行一个laydate实例结束
+
+            // 删除弹出窗
+
+            $('#delete').click(function() {
+                swal({
+                    title: "您确定要删除这条信息吗",
+                    text: "",
+                    type: "warning",
+                    showCancelButton: true,
+                    confirmButtonColor: "#1ab394",
+                    confirmButtonText: "删除",
+                    closeOnConfirm: false
+                }, function() {
+                    swal("删除成功！", "", "success");
+                });
+            });
+
+        });
+    </script>
+</body>
+
+</html>

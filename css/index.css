@@ -1,0 +1,49 @@
+
+.navbar-toggle{
+    background: #18a689;
+}
+.pro-title{
+    position: relative;
+    top: 15px;
+}
+.pro-title .close{
+    position: absolute;
+    top: -10px;
+    right: 10px;
+}
+.pro-title .modal-title{
+    text-align: center;
+    font-size: 14px;
+    font-weight: 600;
+}
+.pro-footer{
+    position: relative;
+    top: 28px;
+}
+.sweet-alert h2{
+    font-size: 14px;
+    font-weight: 600;
+}
+.sweet-alert button{
+    font-size: 12px;
+}
+.sweet-alert button.cancel{
+    color: inherit;
+    background: white;
+    border: 1px solid #e7eaec;
+}
+.sweet-alert button.cancel:hover{
+    background: none;
+    border-color:#ccc;
+}
+
+/*nav-active*/
+
+.top-navigation .nav li.active a{
+    color: #fff;
+    background: #1ab394;
+}
+.top-navigation .navbar-nav li a:hover{
+    color: #fff;
+    background: #1ab394;
+}
